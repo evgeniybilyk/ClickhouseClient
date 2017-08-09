@@ -390,7 +390,7 @@ class HttpTransport implements TransportInterface
                 $result['statistics']['elapsed'] ?? 0
             );
 
-            return new Result($result['data'] ?? [], $statistic);
+            return new Result($result['data'] ?? [], $statistic, $result['totals'] ?? []);
         } catch (\Exception $e) {
             throw ClientException::malformedResponseFromServer($response);
         }
