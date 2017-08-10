@@ -43,17 +43,26 @@ class Result implements \ArrayAccess, \Iterator, \Countable
     protected $totals;
 
     /**
+     * Total count of rows
+     *
+     * @var int
+     */
+    protected $count;
+
+    /**
      * Result constructor.
      *
      * @param array $rows
      * @param \Tinderbox\Clickhouse\Query\QueryStatistic $statistic
      * @param array $totals
+     * @param int $count
      */
-    public function __construct(array $rows, QueryStatistic $statistic, array $totals = [])
+    public function __construct(array $rows, QueryStatistic $statistic, array $totals = [], int $count)
     {
         $this->setRows($rows);
         $this->setStatistic($statistic);
         $this->setTotals($totals);
+        $this->setCount($count);
     }
 
     /**
@@ -192,5 +201,21 @@ class Result implements \ArrayAccess, \Iterator, \Countable
     public function setTotals($totals)
     {
         $this->totals = $totals;
+    }
+
+    /**
+     * @return int
+     */
+    public function getCount(): int
+    {
+        return $this->count;
+    }
+
+    /**
+     * @param int $count
+     */
+    public function setCount(int $count)
+    {
+        $this->count = $count;
     }
 }
