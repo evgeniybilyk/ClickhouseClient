@@ -144,7 +144,7 @@ class Server
      *
      * @return null|string
      */
-    public function getDatabase(): ?string
+    public function getDatabase()
     {
         return $this->database;
     }
@@ -168,7 +168,7 @@ class Server
      *
      * @return null|string
      */
-    public function getUsername(): ?string
+    public function getUsername()
     {
         return $this->username;
     }
@@ -192,7 +192,7 @@ class Server
      *
      * @return null|string
      */
-    public function getPassword(): ?string
+    public function getPassword()
     {
         return $this->password;
     }

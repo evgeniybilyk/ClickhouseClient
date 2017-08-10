@@ -231,7 +231,7 @@ class Client
      *
      * @return null|\Tinderbox\Clickhouse\Cluster
      */
-    public function getCluster(): ?Cluster
+    public function getCluster()
     {
         return $this->cluster;
     }
