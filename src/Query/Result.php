@@ -80,7 +80,7 @@ class Result implements \ArrayAccess, \Iterator, \Countable
      *
      * @param array $rows
      */
-    protected function setRows(array $rows)
+    public function setRows(array $rows)
     {
         $this->rows = $rows;
     }
